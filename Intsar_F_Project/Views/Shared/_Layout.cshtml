@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحه الرئيسيه</title>
+
+    
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="~/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
+        crossorigin="anonymous">
+
+</head>
+<body>
+    <header>
+        <div>
+            <nav class="navbar navbar-expand-lg fixed-top" >
+                <partial name="_LoginPartial" />
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" asp-action="Index" asp-controller="Home">الرئيسيه</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                المجالات
+                            </a>
+                            <ul class="dropdown-menu mega-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" asp-action="magalatF" asp-controller="Home">الادب</a></li>
+                                <li><hr></li>
+                                <li><a class="dropdown-item" asp-action="magalatA" asp-controller="Home">الفنون</a></li>
+                                <li><hr></li>
+                                <li><a class="dropdown-item" asp-action="magalatB" asp-controller="Home">الابتكارات العلميه</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                الفائزون
+                            </a>
+                            <ul class="dropdown-menu mega-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" asp-action="winnersF" asp-controller="Home">الادب</a></li>
+                                <li><hr></li>
+                                <li><a class="dropdown-item" asp-action="winnersA" asp-controller="Home">الفنون</a></li>
+                                <li><hr></li>
+                                <li><a class="dropdown-item" asp-action="winnersB" asp-controller="Home">الابتكارات العلميه</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item phone">
+                            <a asp-action="ContactUs" asp-controller="Home" class="nav-link" >
+                                اتصل بنا <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+    <!-- footer section start -->
+    <footer class="footer-16371">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-9 text-center">
+                <div class="footer-site-logo mb-4">
+                    <h3>جائزة المبدع الصغير</h3>
+                    <hr>
+                  </div>
+                  <div class="row no-gutters">
+                    <div class="col-md-4 mb-md-0 d-flex" >
+                        <div class="con con-1 w-100">
+                            <div class="con-info w-100 text-center">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    <span>+20 1559 9199 44</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="copyright">
+                            <p style="padding-top: 6rem;"><small>&copy; جميع الحقوق محفوطه للمجلس الأعلى للثقافة </small></p>
+                          </div>
+                    </div>
+                    <div class="col-md-4 mb-md-0 d-flex" >
+                        <div class="con con-3 w-100">
+                            <div class="con-info w-100 text-center">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    <span>ش الجبلاية ساحة دار الأوبرا المصرية – الجزيرة – الزمالك – القاهرة</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </footer>
+    <!-- footer section end -->
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/script/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>

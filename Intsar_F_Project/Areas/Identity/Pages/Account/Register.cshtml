@@ -1,0 +1,54 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<!-- Register form start -->
+        <div class="register-form">
+            <form class="form" asp-route-retUrnurl="@Model.ReturnUrl" method="post">
+                <img src="~/image/logo.jpg" alt="">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="error">
+                    <label asp-for="Input.Name" >الاسم بالكامل&nbsp;<span style="color: red;">*</span></label>
+                    <input asp-for="Input.Name" type="text" class="Name" id="name"  required>
+                </div>
+                <div class="error">
+                    <label asp-for="Input.Email" for="email" >البريد الالكتروني&nbsp;<span style="color: red;">*</span></label>
+                    <input asp-for="Input.Email" type="email" class="Email" id="email"  required> 
+                </div>
+                <div class="error">
+                    <label asp-for="Input.Password" for="password">الرقم السري&nbsp;<span style="color: red;">*</span></label>
+                    <input asp-for="Input.Password" type="password" class="password"  id="password" required>
+                </div>
+                <div class="error">
+                    <label asp-for="Input.ConfirmPassword" for="comfirm_password">تأكيد الرقم السري&nbsp;<span style="color: red;">*</span></label>
+                    <input asp-for="Input.ConfirmPassword" type="password" class="comfirm_password"  id="comfirm_password" required>
+                </div>
+                <div class="error">
+                    <label asp-for="Input.gender" for="type" >النوع &nbsp;<span style="color: red;">*</span></label>
+                    <select asp-for="Input.gender" id="type">
+                        <option value="ذكر">ذكر</option>
+                        <option value="انثي">انثي</option>
+                    </select  >
+                </div>
+                <div class="error">
+                    <label asp-for="Input.age" for="birthday" >العمر&nbsp;<span style="color: red;">*</span></label>
+                    <input asp-for="Input.age" type="text" class="birthday" id="birthday" required>
+                </div>
+                <div class="error">
+                    <label asp-for="Input.NationalID" for="National_ID" > الرقم القومي &nbsp;<span style="color: red;">*</span></label>
+                    <input asp-for="Input.NationalID" type="text" class="National_ID" id="National_ID" required>
+                </div>
+                <div class="error">
+                    <label asp-for="Input.mobileNumber" for="phone" >رقم الهاتف&nbsp;<span style="color: red;">*</span></label>
+                    <input asp-for="Input.mobileNumber" type="text" class="phone" id="phone" required>
+                </div>
+                <button type="submit">التسجيل</button>
+            </form>
+        </div>
+        <!-- Register form end -->
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

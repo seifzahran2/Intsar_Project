@@ -1,0 +1,25 @@
+﻿@using Intsar_F_Project.Models.ViewModels
+@model _ProjectVM
+@if(ViewBag.user.IsProjSent==true){
+                <h1 style="margin-top: 12%;
+                margin-bottom: 1.6%;
+                margin-left: 16%;padding-bottom: 2.5%;">لقد قمت بارسال مشروعك ، اذا كان هناك مشكلة يرجى ارسال رسالة لنا.</h1>
+
+    }
+    else
+    {
+<form class="send-project" method="post" asp-action="uploadProject" asp-controller="Comp">
+   <img src="~/image/logo.jpg" alt="" >
+   <div class="input-send-project">
+       <div class="error">
+           <input asp-for="FullName" type="text" class="form-control" id="inlineFormInputGroupUsername"placeholder=" الاسم رباعي "required>
+           <span asp-validation-for="FullName"></span>
+       </div>
+       <div class="error">
+           <input asp-for="DriveLink" type="url" id="url" placeholder=" ( رابط درايف ) رابط المشروع" required>   
+           <span asp-validation-for="DriveLink"></span>
+       </div>
+       <input type="submit" value="ارسال" id="login">
+   </div>
+</form>
+}

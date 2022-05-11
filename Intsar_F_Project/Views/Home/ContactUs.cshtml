@@ -1,0 +1,105 @@
+﻿@using Intsar_F_Project.Models.ViewModels
+@model ContactVM
+<div class="container" style="margin-top:11.5%;border-radius: 20px;">
+    
+<!--Section: Contact v.2-->
+
+<section class="mb-4">
+
+    <!--Section heading-->
+    <h2 class="h1-responsive font-weight-bold text-center my-4">اتصل بنا</h2>
+    <!--Section description-->
+    <p class="text-center w-responsive mx-auto mb-5">في حالة وجود اي مشكلة برجاءالاتصال بنا</p>
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" method="post" asp-action="ContactUs" asp-controller="Home">
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <label asp-for="Email" class="">الاسم</label>
+                            <input asp-for="Email" type="text" id="name"  class="form-control">
+                            
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <label asp-for="FullName" class="">البريد الالكتروني</label>
+                            <input asp-for="FullName"  id="email"  class="form-control">
+                            
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                             <label asp-for="Subject" class="">الموضوع</label>
+                            <input asp-for="Subject" type="text" id="subject"  class="form-control">
+                           
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <label asp-for="Message">محتوى الرسالة</label>
+                            <textarea asp-for="Message" type="text" id="message"  rows="2" class="form-control md-textarea"></textarea>
+                            
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+                <div class="text-center text-md-left" style="margin-top:2%">
+                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();" style="background-color:#647295">ارسال</a>
+                </div>
+            </form>
+
+            
+            <div class="status"></div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                    <p>ش الجبلاية ساحة دار الأوبرا المصرية – الجزيرة – الزمالك – القاهرة</p>
+                </li>
+
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>+ 01 234 567 89</p>
+                </li>
+
+                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                    <p>contact@mdbootstrap.com</p>
+                </li>
+            </ul>
+        </div>
+        <!--Grid column-->
+
+    </div>
+
+</section>
+<!--Section: Contact v.2-->
+</div>

@@ -1,0 +1,46 @@
+﻿@model Intsar_F_Project.Models.ApplicationUser
+<div class="container">
+            <div class="profile-page">
+                <div class="info row" >
+                    <div class="~/img-profile col-sm-12 col-lg-4 col-xl-4">
+                        <img src="~/image/profile1.jpg" alt="">
+                    </div>
+                    <div class="info-group col-sm-12 col-lg-8 col-xl-8">
+                        <div class="name">
+                            <label asp-for="Name" >الاسم</label>
+                            <input asp-for="Name"  type="text"  id="name"  disabled >
+                        </div>
+                        <div class="email">
+                            <label asp-for="Email" for="">البريد الالكتروني</label>
+                            <input asp-for="Email" type="email"  id="email"  disabled>
+                        </div>
+                        <div class="phone">
+                            <label asp-for="mobileNumber" for="">رقم الهاتف</label>
+                            <input asp-for="mobileNumber" type="text"  id="phone"  disabled>
+                        </div>
+                        <div class="National_ID">
+                            <label asp-for="NationalID" for="">الرقم القومي</label>
+                            <input asp-for="NationalID" type="text"  id="National_ID" disabled>
+                        </div>
+                        <div class="type">
+                            <label asp-for="gender" for="">النوع</label>
+                            <input asp-for="gender" type="text"  id="type"  disabled>
+                        </div>
+                        @if(User.IsInRole("Comp")){
+                        <div class="Specialization">
+                            <label for="">الفئه العمريه</label>
+                            <input value="@ViewBag.Comp.AgeType" type="text"  id="Specialization"  disabled>
+                        </div>
+                        <div class="Educational_level">
+                            <label value="@ViewBag.Comp.Educational_level" for="">المرحله الدراسيه</label>
+                            <input value="@ViewBag.Comp.Educational_level" type="text"  id="Educational_level"  disabled>
+                        </div>
+                        <div class="educational_system">
+                            <label value="@ViewBag.Comp.educational_system" for="">النظام التعليمي</label>
+                            <input value="@ViewBag.Comp.educational_system" type="text"  id="educational_system"  disabled>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>

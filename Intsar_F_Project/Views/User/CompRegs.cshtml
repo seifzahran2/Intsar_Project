@@ -1,0 +1,111 @@
+﻿@using Intsar_F_Project.Models.ViewModels
+@model CompRegVM
+@if(ViewBag.user.IsRegSent==true)
+{
+    <h2 style="margin-top: 12%;
+                margin-bottom: 1.6%;
+                margin-left: 16%;padding-bottom: 2.5%;">تم ارسال طلب الانضمام للمسابقة ، اذا كان هناك مشكلة يرجى ارسال رسالة لنا.</h2>
+}
+else
+{
+<!-- Register form start -->
+        <div class="register-prize-form">
+            <form class="form" asp-action="CompRegs" asp-controller="User">
+                <h3 class="registration">التقديم للمسابقه</h3>
+
+                <h6 style="color:red"><strong>@TempData["Message"]</strong></h6>
+                <hr>
+                <div class="error">
+                    <label asp-for="FullName" for="name" >الاسم بالكامل &nbsp;<span style="color: red;">*</span></label>
+                    <input asp-for="FullName" type="text" class="Name"  id="name"  required>
+                    <span ></span>
+                </div>
+                <div class="error">
+                    <label asp-for="Email" for="email" >البريد الالكتروني &nbsp;<span style="color: red;">*</span></label>
+                    <input asp-for="Email" type="email" class="Email"  id="email"  required> 
+                    <span></span>
+                </div>
+                <div class="error">
+                    <label asp-for="Address" for="address" >العنوان &nbsp;<span style="color: red;">*</span></label>
+                    <input asp-for="Address" type="text" class="address"  id="address"  required>
+                    <span></span>
+                </div>
+                <div class="error">
+                    <label asp-for="BankAccount" for="bank_acount">الحساب البنكي &nbsp;<span style="color: red;">*</span></label>
+                    <input asp-for="BankAccount" type="text" class="bank_acount"  id="bank_acount" required>
+                    <span></span>
+                </div>
+                <div class="error">
+                    <label asp-for="Age" for="birthday" >العمر &nbsp;<span style="color: red;">*</span></label>
+                    <input asp-for="Age" type="text" class="birthday" id="birthday" required>
+                    <span></span>
+                </div>
+                <div class="error">
+                    <label asp-for="NationalId" for="National_ID" >الرقم القومي &nbsp;<span style="color: red;">*</span></label>
+                    <input asp-for="NationalId" type="text" class="National_ID" id="National_ID" required>
+                    <span></span>
+                </div>
+                <div class="error">
+                    <label asp-for="ProjectNum" for="project_number" >رقم المشروع &nbsp;<span style="color: red;">*</span></label>
+                    <input asp-for="ProjectNum" type="text" class="project_number" id="project_number" required>
+                    <span></span>
+                </div>
+                <div class="error">
+                    <label asp-for="CompNum" for="participants_number" >عدد المشاركين في المشروع &nbsp;<span style="color: red;">*</span></label>
+                    <input asp-for="CompNum" type="text" class="participants_number" id="participants_number" required> 
+                    <span></span>
+                </div>
+                <div class="error">
+                    <label asp-for="Gender" for="type" >النوع &nbsp;<span style="color: red;">*</span></label>
+                    <select id="type" asp-for="Gender">
+                        <option value="ذكر">ذكر</option>
+                        <option value="انثي">انثي</option>
+                    </select>
+                    <span></span>
+                </div>
+                <div class="error">
+                    <label asp-for="project_type" for="project_type">نوع المشروع &nbsp;<span style="color: red;">*</span></label>
+                    <select asp-for="project_type" id="project_type" class="project_type">
+                        <option value="الفن المسرحي">الفن المسرحي</option>
+                        <option value="القصه">القصه</option>
+                        <option value="الشعر">الشعر</option>
+                        <option value="البرمجه">البرمجه</option>
+                        <option value="برمجة المواقع">برمجة المواقع</option>
+                        <option value="العزف علي الكمان">العزف علي الكمان</option>
+                        <option value="العزف علي التشيلو">العزف علي التشيلو</option>
+                        <option value="الرسم">الرسم</option>
+                        <option value="الغناء">الغناء</option>
+                    </select>
+                    <span></span>
+                </div>
+                <div class="error">
+                    <label asp-for="Educational_level" for="Educational_level" >المرحلة الدراسية &nbsp;<span style="color: red;">*</span></label>
+                    <select asp-for="Educational_level" id="Educational_level">
+                        <option value="رياض اطفال">رياض اطفال</option>
+                        <option value="ابتدائي">ابتدائي</option>
+                        <option value="اعدادي">اعدادي</option>
+                        <option value="ثانوى">ثانوى</option>
+                    </select>
+                    <span></span>
+                </div>
+                <div class="error">
+                    <label asp-for="AgeType" for="type" >الفئة العمرية &nbsp;<span style="color: red;">*</span></label>
+                    <select asp-for="AgeType" id="type">
+                        <option value="5-12">5-12</option>
+                        <option value="12-18">12-18</option>
+                    </select>
+                    <span></span>
+                </div>
+                <div class="error">
+                    <label asp-for="educational_system" for="educational_system" >النظام التعليمي &nbsp;<span style="color: red;">*</span></label>
+                    <select asp-for="educational_system" id="educational_system">
+                        <option value="حكومي">حكومي</option>
+                        <option value="لغات">لغات</option>
+                    </select>
+                    <span></span>
+                </div>
+                <button type="submit">التسجيل</button>
+            </form>
+        </div>
+        <!-- Register form end -->
+        }
