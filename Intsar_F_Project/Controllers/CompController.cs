@@ -35,8 +35,11 @@ namespace Intsar_F_Project.Controllers
             {
                 FullName = projectVM.FullName,
                 DriveLink = projectVM.DriveLink,
-                Specialization = compSp.project_type
+                Specialization = compSp.project_type,
+                Email = compSp.Email
+               
             };
+            compSp.IsprojecSent=true;
             _App.Add(project);
             _App.SaveChanges();
             user.IsProjSent = true;

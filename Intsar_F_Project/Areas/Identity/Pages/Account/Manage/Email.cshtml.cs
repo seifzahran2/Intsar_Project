@@ -109,7 +109,8 @@ namespace Intsar_F_Project.Areas.Identity.Pages.Account.Manage
                     $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                 StatusMessage = "Confirmation link to change email sent. Please check your email.";
-                return RedirectToPage();
+                user.Email = Input.NewEmail;
+                
             }
             if (Request.Form.Files.Count > 0)
             {
@@ -119,8 +120,10 @@ namespace Intsar_F_Project.Areas.Identity.Pages.Account.Manage
                     await file.CopyToAsync(datastream);
                     user.ProfilePic = datastream.ToArray();
                 }
-                await _userManager.UpdateAsync(user);
+
+                
             }
+            await _userManager.UpdateAsync(user);
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your email is unchanged.";
             return RedirectToPage();

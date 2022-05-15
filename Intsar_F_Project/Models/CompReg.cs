@@ -41,6 +41,7 @@ namespace Intsar_F_Project.Models
         [Required(ErrorMessage = "تأكد من اختيار النظام التعليمي ")]
         public string educational_system { get; set; }
         public bool IsAccepted { get; set; }
-        public string Result { get; set; }
+        public bool IsprojecSent { get; set; }
+        public DegComp degComp { get; set; }
     }
 }

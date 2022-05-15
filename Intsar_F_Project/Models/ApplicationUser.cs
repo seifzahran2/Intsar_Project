@@ -25,5 +25,7 @@ namespace Intsar_F_Project.Models
         public string NationalID { get; set; }
         [Required(ErrorMessage = "تاكد من اختيار النوع ")]
         public string gender { get; set; }
+        public string Role { get; set; }
+
     }
 }

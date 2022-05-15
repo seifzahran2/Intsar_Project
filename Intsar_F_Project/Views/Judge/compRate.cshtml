@@ -1,0 +1,123 @@
+﻿@model Intsar_F_Project.Models.ViewModels.DegCompVM
+<!-- Register form start -->
+        <div class="correct-prize">
+            <form class="form" method="post" >
+                <a href="@ViewBag.user.DriveLink">
+                    <label for="project_link">رابط المشروع</label>
+                    <input type="text" id="project_link" class="project_link" value="@ViewBag.user.DriveLink" disabled>
+                </a>
+                <hr>
+                <div class="row">
+                    <div class="error col-sm-6">
+                        <label for="Project_Idea" >فكرة المشروع &nbsp;<span style="color: red;">*</span></label>
+                        <select  id="Project_Idea" asp-for="ProjectIdea">
+                            <option value="تقليدي">تقليدي</option>
+                            <option value="جديده بسيطه">جديده بسيطه</option>
+                            <option value="متميزه">متميزه</option>
+                            <option value="مبدعه">مبدعه</option>
+                        </select>
+                        <span></span>
+                    </div>
+                    <div class="error col-sm-6">
+                        <label for="Execution_quality" >جودة التنفيذ &nbsp;<span style="color: red;">*</span></label>
+                        <select  id="Execution_quality" asp-for="ExecutionQuality">
+                            <option value="ضعيفه">ضعيفه</option>
+                            <option value="مقبوله">مقبوله</option>
+                            <option value="متميزه">متميزه</option>
+                            <option value="مبدعه">مبدعه</option>
+                        </select>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="error col-sm-6">
+                        <label for="GUI" >جودة الشكل (GUI) &nbsp;<span style="color: red;">*</span></label>
+                        <select  id="GUI" asp-for="Gui">
+                            <option value="ضعيفه">ضعيفه</option>
+                            <option value="مقبوله">مقبوله</option>
+                            <option value="متميزه">متميزه</option>
+                            <option value="مبدعه">مبدعه</option>
+                        </select>
+                        <span></span>
+                    </div>
+                    <div class="error col-sm-6">
+                        <label for="Content_Quality" >جودة المحتوي &nbsp;<span style="color: red;">*</span></label>
+                        <select  id="Content_Quality" asp-for="ContentQuality">
+                            <option value="ضعيفه">ضعيفه</option>
+                            <option value="مقبوله">مقبوله</option>
+                            <option value="متميزه">متميزه</option>
+                            <option value="مبدعه">مبدعه</option>
+                        </select>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="error col-sm-6">
+                        <label for="complexity" >درجة التعقيد &nbsp;<span style="color: red;">*</span></label>
+                        <select  id="complexity" asp-for="complexity">
+                            <option value="بسيطه">بسيطه</option>
+                            <option value="متوسط">متوسط</option>
+                            <option value="عاليه">عاليه</option>
+                            <option value="متقنه">متقنه</option>
+                        </select>
+                        <span></span>
+                    </div>
+                    <div class="error col-sm-6">
+                        <label for="Project_benefit" >فائدة المشروع للاخرين &nbsp;<span style="color: red;">*</span></label>
+                        <select  id="Project_benefit" asp-for="ProjectBbenefit">
+                            <option value="ضعيفه">ضعيفه</option>
+                            <option value="متوسط">متوسط</option>
+                            <option value="كبيره">كبيره</option>
+                            <option value="كبيره جدا">كبيره جدا</option>
+                        </select>
+                        <span></span>
+                    </div>
+
+                </div>
+                <div class="error">
+                    <label for="tools" >اللغه / الادوات المستخدمه &nbsp;<span style="color: red;">*</span></label>
+                    <input asp-for="language_Tools" type="text" class="tools"  id="tools"  required>
+                    <span ></span>
+                </div>
+                <div class="row">
+                    <div class="error col-sm-6">
+                        <label for="tool" >درجة التمكن من الادوات &nbsp;<span style="color: red;">*</span></label>
+                        <select  id="tool" asp-for="MasteringTheTools">
+                            <option value="ضعيفه">ضعيفه</option>
+                            <option value="مقبوله">مقبوله</option>
+                            <option value="متميزه">متميزه</option>
+                            <option value="مبدعه">مبدعه</option>
+                        </select>
+                        <span></span>
+                    </div>
+                    <div class="error col-sm-6">
+                        <label for="Infrastructure" >البنيه التحتيه المستخدمه &nbsp;<span style="color: red;">*</span></label>
+                        <select  id="Infrastructure" asp-for="InfrastructureUsed">
+                            <option value="بسيطه">بسيطه</option>
+                            <option value="متوسط">متوسط</option>
+                            <option value="متميزه">متميزه</option>
+                            <option value="مبدعه">مبدعه</option>
+                        </select>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="error">
+                    <label for="Notes" >ملاحظات &nbsp;<span style="color: red;">*</span></label>
+                    <input type="text" asp-for="Notes" class="Notes"  id="Notes"  required>
+                    <span ></span>
+                </div>
+                <div class="error">
+                    <label for="Estimation" >التقدير العام &nbsp;<span style="color: red;">*</span></label>
+                    <select  id="Estimation" asp-for="OverallRating">
+                        <option value="ضعيف">ضعيف</option>
+                        <option value="مقبول">مقبول</option>
+                        <option value="جيد">جيد</option>
+                        <option value="متميزه">متميزه</option>
+                        <option value="مبدعه">مبدعه</option>
+                    </select>
+                    <span></span>
+                </div>
+                <button type="submit">حفظ</button>
+            </form>
+        </div>
+        <!-- Register form end -->

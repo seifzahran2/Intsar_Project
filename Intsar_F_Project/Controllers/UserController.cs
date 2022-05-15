@@ -43,17 +43,19 @@ namespace Intsar_F_Project.Controllers
                 project_type = compRegVM.project_type,
                 Educational_level = compRegVM.Educational_level,
                 AgeType = compRegVM.AgeType,
-                educational_system = compRegVM.educational_system
+                educational_system = compRegVM.educational_system,
+                
             };
-            _App.compRegs.Add(compReg);
-            _App.SaveChanges();
+            
             if (user.Email != compRegVM.Email || user.NationalID != compRegVM.NationalId)
             {
                 TempData["Message"] = "يجب ان يكون الرقم القومي و البريد الالكتروني مطابق لتسجيل الدخول ، راجع صفحتك الشخصية.";
                 return RedirectToAction("CompRegs", "User");
             }
-           
+            _App.compRegs.Add(compReg);
+            _App.SaveChanges();
             user.IsRegSent = true;
+            user.Specialization = compRegVM.project_type;
             await _userManager.UpdateAsync(user);
             return RedirectToAction("CompRegs","User");
         }

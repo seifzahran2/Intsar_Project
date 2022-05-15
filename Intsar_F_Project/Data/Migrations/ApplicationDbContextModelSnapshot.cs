@@ -79,6 +79,9 @@ namespace Intsar_F_Project.Data.Migrations
                     b.Property<byte[]>("ProfilePic")
                         .HasColumnType("varbinary(max)");
 
+                    b.Property<string>("Role")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 

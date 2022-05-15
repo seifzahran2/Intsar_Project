@@ -1,9 +1,13 @@
-body
-{
-background-image: url(../image/blur-bg.jpg) !important;
-background-size: cover;
-background-repeat: no-repeat;
-color: var(--dark-red) !important;
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url(../image/blur-bg.jpg) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--dark-red) !important;
+    
 }
 
 :root{
@@ -246,7 +250,7 @@ text-align: center;
 }
 
 .top-home .caption h6 {
-margin-top: 0px;
+margin-top: 2rem;
 font-size: 15px;
 text-transform: uppercase;
 font-weight: 600;
@@ -269,11 +273,6 @@ color: #f5a425;
 font-weight: 900;
 }
 
-.top-home .caption p {
-color: #fff;
-font-size: 14px;
-max-width: 570px;
-}
 section.home-Conditions
 {
     direction: rtl;
@@ -890,21 +889,23 @@ section.winners .card-body ul li
     font-size: 20px;
     color: #9c194b;
 }
-.register-form form button,.register-prize-form form button
-
-{
-  background: #9c194b;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 3px solid #f2ebe5;
-  color: var(--white);
-  border-radius: 22px;
-  width: 10rem;
-  height: 3rem;
-  cursor: pointer;
+.register-form form button, .register-prize-form form button, .btnView {
+    background: #9c194b;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #f2ebe5;
+    color: var(--white) !important;
+    border-radius: 22px;
+    width: 10rem;
+    height: 3rem;
+    cursor: pointer;
 }
-
+.btnView {
+    padding-top: 5px;
+    font-weight: bold;
+    margin: 60px auto;
+}
 @media only screen and (max-width: 768px)
 {
   .register-form form
@@ -1026,35 +1027,31 @@ section.winners .card-body ul li
 /* end profile page  */
 
 /* start Change page */
-.change-page
-{
-  direction: rtl;
+.change-page {
+    direction: rtl;
+    margin-right: 4rem !important;
+    margin-top: 3rem !important;
 }
-.change-page ul
-{
-  background: rgb(0 0 0 / 2%);
-  margin-top: 130%;
-  list-style-type: none;
-  border-radius: 10px;
-  box-shadow: var(--box-shadow);
-}
-.change-page ul li 
-{
-  padding: 6px;
-  text-align: center;
-  cursor: pointer;
-}
-.change-page ul li:hover
-{
-  padding: 8px;
-  box-shadow: var(--box-shadow);
-
-}
-.change-page ul li a
-{
-  text-decoration: none;
-  color: var(--blue);
-}
+    .change-page .ulChange {
+        background: rgb(0 0 0 / 2%);
+        margin-top: 130%;
+        list-style-type: none;
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+    }
+    .change-page .ulChange li {
+        padding: 6px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .change-page .ulChange li:hover {
+        padding: 8px;
+        box-shadow: var(--box-shadow);
+    }
+    .change-page .ulChange li a {
+        text-decoration: none;
+        color: var(--blue);
+    }
 
 .change-page .info
 {
@@ -1112,7 +1109,7 @@ section.winners .card-body ul li
   border-radius: 20px;
   width: 60%;
   color: var(--blue);
-  border: solid var(--blue) 0.1rem;
+  border: solid 0.15rem;
 }
 
 .change-page .info-group div #type,
@@ -1139,18 +1136,16 @@ section.winners .card-body ul li
   {
     margin: 20% auto 2%;
   }
-  .change-page ul 
-  {
-    margin-top: 153%;
-  }
+    .change-page .ulChange {
+        margin-top: 153%;
+    }
 }
 
 @media only screen and (max-width:991px)
 {
-  .change-page ul
-  {
-    margin-top: 19%;
-  }
+    .change-page .ulChange {
+        margin-top: 19%;
+    }
   .change-page .info
   {
     margin: 4% auto 2%;
@@ -1174,10 +1169,9 @@ section.winners .card-body ul li
 
 @media only screen and (max-width:770px)
 {
-  .change-page ul
-  {
-    margin-top: 25%;
-  }
+    .change-page .ulChange {
+        margin-top: 25%;
+    }
 }
 
 
@@ -1322,7 +1316,7 @@ section.winners .card-body ul li
       padding: .5rem 1rem;
       border-radius:50px;
       margin-top: .2rem;
-      font-size: 0.6rem;
+      font-size: 0.8rem;
       font-weight: 400;
     }
     div.correct-prize form div label
@@ -1401,14 +1395,14 @@ div.correct-prize form img
    */
 
   /* start footer */
-  .footer-16371
-   {
+.footer-16371 {
     padding: 2rem 0;
-    font-family: "Poppins", sans-serif; 
+    font-family: "Poppins", sans-serif;
     background-image: url(../image/blur-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-  }
+    margin-top: auto;
+}
   .footer-16371 .footer-site-logo {
     text-align: center;
     font-size: 2rem;

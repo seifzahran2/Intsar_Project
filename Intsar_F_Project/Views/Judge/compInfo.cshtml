@@ -1,0 +1,65 @@
+﻿@model Intsar_F_Project.Models.DegComp
+
+<!-- Register form start -->
+        <div class="correct-prize">
+            <form class="form view" >
+                <hr>
+                <div class="row">
+                    <div class="error col-sm-6">
+                        <label for="Project_Idea" >@Model.ProjectIdea</label>
+                        <input asp-for="ProjectIdea" type="text" class="Project_Idea"  id="Project_Idea" disabled  >
+                    </div>
+                    <div class="error col-sm-6">
+                        <label for="Execution_quality" >@Model.ExecutionQuality</label>
+                        <input asp-for="ExecutionQuality" type="text" class="Execution_quality"  id="Execution_quality" disabled  >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="error col-sm-6">
+                        <label for="GUI" >@Model.Gui</label>
+                        <input asp-for="Gui" type="text" class="GUI"  id="GUI" disabled  >
+                    </div>
+                    <div class="error col-sm-6">
+                        <label for="GUI" >@Model.ContentQuality</label>
+                        <input asp-for="ContentQuality" type="text" class="Content_Quality"  id="Content_Quality" disabled  >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="error col-sm-6">
+                        <label for="complexity" >@Model.complexity</label>
+                        <input asp-for="complexity" type="text" class="complexity"  id="complexity" disabled  >
+                    </div>
+                    <div class="error col-sm-6">
+                        <label for="Project_benefit" >@Model.ProjectBbenefit</label>
+                        <input asp-for="ProjectBbenefit" type="text" class="Project_benefit"  id="Project_benefit" disabled  >
+                    </div>
+                </div>
+                <div class="error">
+                    <label for="tools" >@Model.language_Tools</label>
+                    <input asp-for="language_Tools" type="text" class="tools"  id="tools"  disabled  >
+                </div>
+
+                <div class="row">
+                    <div class="error col-sm-6">
+                        <label for="tool" >@Model.MasteringTheTools</label>
+                        <input asp-for="MasteringTheTools" type="text" class="tool"  id="tool" disabled  >
+                    </div>
+                    <div class="error col-sm-6">
+                        <label for="Infrastructure" >@Model.InfrastructureUsed</label>
+                        <input asp-for="InfrastructureUsed" type="text" class="Infrastructure"  id="Infrastructure" disabled  >
+                    </div>
+                </div>
+                <div class="error">
+                    <label for="Notes" >@Model.Notes</label>
+                    <input asp-for="Notes" type="text" class="Notes"  id="Notes"  disabled  >
+                    <span ></span>
+                </div>
+                <div class="error">
+                    <label for="Estimation" >@Model.OverallRating</label>
+                    <input asp-for="OverallRating" type="text" class="Estimation"  id="Estimation" disabled  >
+                </div>
+                <button type="submit" asp-action="Index" asp-controller="Judge">رجوع</button>
+            </form>
+        </div>
+        <!-- Register form end -->
+        

@@ -253,12 +253,14 @@ body{
 }
 .cardheader
 {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-start; */
+    text-align: center;
 }
 .cardheader h2
 {
+    margin-bottom: 34;
     font-weight: 600;
     color: (--blue);
 }
@@ -279,7 +281,16 @@ body{
 }
 .details table thead td
 {
+    text-align: center;
     font-weight: 600;
+    background-color: #951a49;
+    color: white;
+   
+}
+.details table thead 
+{
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
 }
 
 .details .recentorder table tr
@@ -308,11 +319,11 @@ body{
 }
 .details .recentorder table tr td:last-child
 {
-    text-align: end;
+    text-align: center;
 }
 .details .recentorder table tr td:nth-child(2)
 {
-    text-align: end;
+    text-align: center;
 }
 .details .recentorder table tr td:nth-child(3)
 {
@@ -379,6 +390,18 @@ body{
 {
     font-size: 14px;
     color: var(--black2);
+}
+.recentcustomer table tbody tr td 
+{
+    margin-top: 20px;
+    text-align: center;
+}
+.recentcustomer table tbody tr td a
+{
+    font-size: larger;
+    text-align: center;
+    text-decoration: none;
+    color: black;
 }
 /* small table style */
 
@@ -486,6 +509,61 @@ th{
     background:#951a49;
     color: #fafafa;
     text-transform: uppercase;
+}
+
+th, td
+{
+    padding: 5px 12px ;
+}
+#resultbutton
+{
+    height: 32px;
+    padding: 4px;
+    width: 62px;
+    color: #951a49;
+    border-color:#951a49 ;
+
+
+}
+#resultbutton:hover
+{
+    color: white;
+    background-color: #951a49;
+}
+
+/* *****************************************start result vewi*************************************************** */
+.resultveiw
+{
+    text-align: center !important;  
+}
+.resultveiw h2
+{
+    text-align: center !important; 
+    margin-bottom: 40px; 
+}
+.resultveiw table
+{
+    
+    vertical-align: top;
+    margin: auto;
+    width: 70%;
+    height: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 0 15px 15px 0;
+    overflow: hidden;
+    box-shadow: 0 12px 5px rgb(32 32 32 / 30%);
+    direction: rtl;
+    overflow: hidden;
+    background: none;
+}
+
+
+th{
+    background:#951a49;
+    color: #fafafa;
+    text-transform: uppercase;
+    width: 180px;
 }
 
 th, td

@@ -17,44 +17,46 @@
     <form method="post"  id="logoutForm" >
     <div class="new-container" >
             <div class="navigation">
-                <ul>
-                    <li>
+            <ul>
+                <li>
                     <a href="#">
-                    <span class="icon"></span>
-                    <span class="title"></span>
+                        <span class="icon"></span>
+                        <span class="title"></span>
                     </a>
-                    </li>
-                    <li>
+                </li>
+                <li>
                     <a asp-action="Index" asp-controller="Home">
-                    <span class="icon"><i class="bi bi-house-door"></i>
-                    </span>
-                    <span class="title">الصفحه الرئيسيه</span>
-                    
+                        <span class="icon">
+                            <i class="bi bi-house-door"></i>
+                        </span>
+                        <span class="title">الصفحه الرئيسيه</span>
+
                     </a>
-                    </li>
-                    <li>
+                </li>
+
+                <li>
+                    <a asp-action="UserMangment" asp-controller="Admin">
+                        <span class="icon"><i class="bi bi-kanban"></i></span>
+                        <span class="title">اداره المستخدمين</span>
+                    </a>
+                </li>
+                <li>
                     <a asp-action="AdminHome" asp-controller="Admin">
-                    <span class="icon"><i class="bi bi-house-door"></i>
-                    </span>
-                    <span class="title">الطلبات و الرسائل</span>
-                    
+                        <span class="icon">
+                            <i class="bi bi-check2-circle"></i>
+
+                        </span>
+                        <span class="title">صفحه الرسائل وقبول الطلبات</span>
                     </a>
-                    </li>
-                    <li>
-                    <a asp-action="AdminHome" asp-controller="Admin">
-                    <span class="icon"><i class="bi bi-kanban"></i></span>
-                    <span class="title">اداره المستخدمين</span>
+                </li>
+                <li>
+                    <a asp-action="ResultHome" asp-controller="Admin">
+                        <span class="icon"><i class="bi bi-file-earmark-person"></i></span>
+                        <span class="title">النتائج</span>
                     </a>
-                    </li>
-                    
-                    <li>
-                    <a asp-action="AdminHome" asp-controller="Admin">
-                    <span class="icon"><i class="bi bi-file-earmark-person"></i></span>
-                    <span class="title">النتائج</span>
-                    </a>
-                    </li>           
-                </ul>
-            </div>
+                </li>
+            </ul>
+        </div>
             <div class="main">
                 <div class="topbar">
 
@@ -95,7 +97,7 @@
                     <div class="btnstyle">
                         <!-- <button type="button" id="btnAccept" class="btn btn-outline-secondary">قبول</button>
                         <button type="button" id="btnRefuse" class="btn btn-outline-secondary">رفض</button> -->
-                        <button type="submit" id="btnAccept" class="btn btn-secondary " >قبول</button>
+                        <button  type="submit" id="btnAccept" class="btn btn-secondary " >قبول</button>
                         <a asp-action="AdminHome" asp-controller="Admin" type="button" id="btnRefuse" class="btn btn-secondary " >رفض</a>
                     </div>
                 </div>
@@ -105,6 +107,6 @@
       <!-- JS codes -->
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-      <script src="~/js/scriptA.js"></script>
+      <script src="~/script/scriptA.js"></script>
 </body>
 </html>

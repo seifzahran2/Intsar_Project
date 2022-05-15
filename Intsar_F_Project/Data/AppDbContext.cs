@@ -13,6 +13,6 @@ namespace Intsar_F_Project.Data
         public DbSet<CompReg> compRegs { get; set; }
         public DbSet<_Project> projects { get; set; }
         public DbSet<Contact> contacts { get; set; }
-
+        public DbSet<DegComp> degComps { get; set; }
     }
 }
