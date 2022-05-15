@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="../HOME PAGE/index.html">
+                    <a asp-action="Index" asp-controller="Home">
                         <span class="icon">
                             <i class="bi bi-house-door"></i>
                         </span>
@@ -42,15 +42,24 @@
                 </li>
 
                 <li>
-                    <a href="../user managment/indx.html">
+                    <a asp-action="UserMangment" asp-controller="Admin">
                         <span class="icon"><i class="bi bi-kanban"></i></span>
                         <span class="title">اداره المستخدمين</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../result/indx.html">
-                        <span class="icon"><i class="bi bi-file-earmark-person"></i>></span>
-                        <span class="title">النتيجه</span>
+                    <a asp-action="AdminHome" asp-controller="Admin">
+                        <span class="icon">
+                            <i class="bi bi-check2-circle"></i>
+
+                        </span>
+                        <span class="title">صفحه الرسائل وقبول الطلبات</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-action="ResultHome" asp-controller="Admin">
+                        <span class="icon"><i class="bi bi-file-earmark-person"></i></span>
+                        <span class="title">النتائج</span>
                     </a>
                 </li>
             </ul>

@@ -57,7 +57,19 @@ namespace Intsar_F_Project.Controllers
             var requests = _App.compRegs.Where(r => r.Id == id).FirstOrDefault();
             var user = _userManager.Users.Where(u => u.Email == requests.Email).FirstOrDefault();
             requests.IsAccepted = true;
-            await _userManager.RemoveFromRoleAsync(user, "User");
+            if (User.IsInRole("User"))
+            {
+                await _userManager.RemoveFromRoleAsync(user, "User");
+            }
+            else if (User.IsInRole("Admin"))
+            {
+                await _userManager.RemoveFromRoleAsync(user, "User");
+            }
+            
+            else if (User.IsInRole("Judge"))
+            {
+                await _userManager.RemoveFromRoleAsync(user, "User");
+            }
             await _userManager.AddToRoleAsync(user, "Comp");
             _App.SaveChanges();
             await _userManager.UpdateAsync(user);
@@ -94,20 +106,22 @@ namespace Intsar_F_Project.Controllers
             var user = _userManager.Users.Where(x => x.Id == id).FirstOrDefault();
 
             user.Specialization = _user.Specialization;
+            
+            var role = _userManager.GetRolesAsync(user).Result[0];
             if (_user.Role == "متحكم")
             {
+                await _userManager.RemoveFromRoleAsync(user, role);
                 await _userManager.AddToRoleAsync(user, "Admin");
-                await _userManager.RemoveFromRoleAsync(user, "User");
-
             }
             else if (_user.Role == "مستخدم")
             {
+                await _userManager.RemoveFromRoleAsync(user, role);
                 await _userManager.AddToRoleAsync(user, "User");
             }
             else if (_user.Role == "مصحح")
             {
+                await _userManager.RemoveFromRoleAsync(user, role);
                 await _userManager.AddToRoleAsync(user, "Judge");
-                await _userManager.RemoveFromRoleAsync(user, "User");
             }
 
             await _userManager.UpdateAsync(user);

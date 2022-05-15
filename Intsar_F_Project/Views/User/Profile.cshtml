@@ -40,20 +40,27 @@
                             <label asp-for="gender" for="">النوع</label>
                             <input asp-for="gender" type="text"  id="type"  disabled>
                         </div>
-                        @if(User.IsInRole("Comp")){
-                        <div class="Specialization">
-                            <label for="">الفئه العمريه</label>
-                            <input value="@ViewBag.Comp.AgeType" type="text"  id="Specialization"  disabled>
-                        </div>
-                        <div class="Educational_level">
-                            <label value="@ViewBag.Comp.Educational_level" for="">المرحله الدراسيه</label>
-                            <input value="@ViewBag.Comp.Educational_level" type="text"  id="Educational_level"  disabled>
-                        </div>
-                        <div class="educational_system">
-                            <label value="@ViewBag.Comp.educational_system" for="">النظام التعليمي</label>
-                            <input value="@ViewBag.Comp.educational_system" type="text"  id="educational_system"  disabled>
-                        </div>
+                        @if (User.IsInRole("Judge"))
+                        {
+                            <div class="type">
+                            <label asp-for="Specialization" for="">التخصص</label>
+                            <input asp-for="Specialization" type="text"  id="type"  disabled>
+                            </div>
                         }
+                        @if(User.IsInRole("Comp")){
+                                <div class="Specialization">
+                                    <label for="">الفئه العمريه</label>
+                                    <input value="@ViewBag.Comp.AgeType" type="text"  id="Specialization"  disabled>
+                                </div>
+                                <div class="Educational_level">
+                                    <label value="@ViewBag.Comp.Educational_level" for="">المرحله الدراسيه</label>
+                                    <input value="@ViewBag.Comp.Educational_level" type="text"  id="Educational_level"  disabled>
+                                </div>
+                                <div class="educational_system">
+                                    <label value="@ViewBag.Comp.educational_system" for="">النظام التعليمي</label>
+                                    <input value="@ViewBag.Comp.educational_system" type="text"  id="educational_system"  disabled>
+                                </div>
+                                }
                     </div>
                 </div>
             </div>

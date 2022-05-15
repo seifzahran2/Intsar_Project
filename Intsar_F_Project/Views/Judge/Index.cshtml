@@ -6,7 +6,7 @@
                   <tr>
                     <th>الاسم</th>
                     <th>رقم المشروع</th>
-                    <th>الفئه العمريه</th>
+                    <th>التخصص</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -26,7 +26,7 @@
                         <td>
                             @item.ProjectNum
                         </td>
-                        <td>5-12</td>
+                        <td>@item.project_type</td>
                         <td>
                             <a class="view" href="/Judge/CompInfo/@item.Id">
                                 عرض

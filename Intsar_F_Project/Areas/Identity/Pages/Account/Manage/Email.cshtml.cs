@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Intsar_F_Project.Models;
 using System.IO;
+using System.Net.Mail;
 
 namespace Intsar_F_Project.Areas.Identity.Pages.Account.Manage
 {
@@ -49,6 +50,7 @@ namespace Intsar_F_Project.Areas.Identity.Pages.Account.Manage
             [EmailAddress]
             [Display(Name = "New email")]
             public string NewEmail { get; set; }
+            public string UserName { get; set; }
             [Display(Name = "Profile Picture")]
             public byte[] ProfilePic { get; set; }
         }
@@ -61,6 +63,7 @@ namespace Intsar_F_Project.Areas.Identity.Pages.Account.Manage
             {
                 NewEmail = email,
                 ProfilePic= user.ProfilePic,
+                UserName= new MailAddress(email).User
             };
 
             IsEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user);
@@ -110,7 +113,9 @@ namespace Intsar_F_Project.Areas.Identity.Pages.Account.Manage
 
                 StatusMessage = "Confirmation link to change email sent. Please check your email.";
                 user.Email = Input.NewEmail;
-                
+                user.UserName = new MailAddress(Input.NewEmail).User;
+
+
             }
             if (Request.Form.Files.Count > 0)
             {

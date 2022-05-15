@@ -28,7 +28,7 @@ namespace Intsar_F_Project.Controllers
             return View(user);
         }
 
-        public IActionResult compInfo(int id,DegCompVM degCompVM)
+        public IActionResult compInfo(int id)
         {
             var user = _App.degComps.Where(b=>b.compRegId==id).FirstOrDefault();
             if(user==null)
@@ -48,7 +48,8 @@ namespace Intsar_F_Project.Controllers
         public IActionResult compRate(int id,DegCompVM degCompVM)
         {
             var user = _App.compRegs.Where(b => b.Id == id).FirstOrDefault();
-            if (user != null)
+            var user2 = _App.degComps.Where(b => b.compRegId == id).FirstOrDefault();
+            if (user2 != null)
             {
                 var degUserr = _App.degComps.Where(c => c.compRegId == id).FirstOrDefault();
                 degUserr.ProjectIdea = degCompVM.ProjectIdea;
@@ -64,7 +65,6 @@ namespace Intsar_F_Project.Controllers
                 degUserr.OverallRating = degCompVM.OverallRating;
                 degUserr.Email = user.Email;
                 degUserr.compRegId = id;
-
                 _App.SaveChanges();
                 return RedirectToAction("Index", "Judge");
             }
@@ -85,6 +85,7 @@ namespace Intsar_F_Project.Controllers
                 Email = user.Email,
                 compRegId = id,
             };
+            _App.Add(degUser);
             _App.SaveChanges();
             return RedirectToAction("Index", "Judge");
         }
