@@ -368,3 +368,5 @@ E:\Repos\Intsar_Project\Intsar_F_Project\obj\Debug\net5.0\Razor\Views\Admin\Mess
 E:\Repos\Intsar_Project\Intsar_F_Project\obj\Debug\net5.0\Razor\Views\Admin\ResultHome.cshtml.g.cs
 E:\Repos\Intsar_Project\Intsar_F_Project\obj\Debug\net5.0\Razor\Views\Admin\compInfo.cshtml.g.cs
 E:\Repos\Intsar_Project\Intsar_F_Project\obj\Debug\net5.0\Razor\Views\Admin\errorView.cshtml.g.cs
+E:\Repos\Intsar_Project\Intsar_F_Project\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\ConfirmEmail.cshtml.g.cs
+E:\Repos\Intsar_Project\Intsar_F_Project\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\RegisterConfirmation.cshtml.g.cs

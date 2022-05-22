@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -38,6 +39,17 @@ namespace Intsar_F_Project
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Admin", policy
+                    => policy.RequireClaim(claimType: "Roles", "Admin"));
+                options.AddPolicy("Judge", policy
+                    => policy.RequireClaim(claimType: "Roles", "Judge"));
+                options.AddPolicy("Comp", policy
+                    => policy.RequireClaim(claimType: "Roles", "Comp"));
+                options.AddPolicy("User", policy
+                    => policy.RequireClaim(claimType: "Roles", "User"));
+            });
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultUI()
@@ -85,6 +97,7 @@ namespace Intsar_F_Project
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+            
         }
     }
 }

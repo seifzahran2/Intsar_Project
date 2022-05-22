@@ -5,10 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Intsar_F_Project.Data;
-using Intsar_F_Project.Models;
 using Intsar_F_Project.Models.ViewModels;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
 namespace Intsar_F_Project.Controllers
