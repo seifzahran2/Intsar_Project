@@ -1,4 +1,7 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
     Layout = null;
 }
 @model ApplicationUser
@@ -65,7 +68,18 @@
 
               @*userImg*@ 
                 <div class="user">
-                    <img src="../HOME PAGE/IMG/downloadasdasdas.jpg">
+                    @if (UserManager.GetUserAsync(User).Result.ProfilePic != null)
+                {
+                    <a class="nav-link nav-profile" href="#" id="navbarDropdown"  data-bs-toggle="dropdown" aria-expanded="false" >
+                         <img src="data:image/*;base64,@(Convert.ToBase64String(UserManager.GetUserAsync(User).Result.ProfilePic))" alt="" > <span > @User.Identity.Name </span>
+                    </a>
+                }
+                else
+                {
+                    <a class="nav-link nav-profile" href="#" id="navbarDropdown"  data-bs-toggle="dropdown" aria-expanded="false" >
+                         <img src="~/image/Profilett.jpg" alt="" > <span > @User.Identity.Name </span>
+                    </a>
+                }
                 </div>
 
             </div>

@@ -4,21 +4,19 @@ using Intsar_F_Project.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Intsar_F_Project.Data.Migrations
+namespace Intsar_F_Project.Migrations.ApplicationDb
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220513124720_AddRole")]
-    partial class AddRole
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.16")
+                .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Intsar_F_Project.Models.ApplicationUser", b =>
@@ -120,6 +118,29 @@ namespace Intsar_F_Project.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "b74ddd14-6340-4840-95c2-db12554843e5",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "e49d8d04-2ad7-4a26-82d7-035bbb60f7b1",
+                            Email = "admin@gmail.com",
+                            EmailConfirmed = false,
+                            IsProjSent = false,
+                            IsRegSent = false,
+                            LockoutEnabled = false,
+                            Name = "Admin",
+                            NationalID = "12345678912345",
+                            PhoneNumber = "1234567890",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "c194ff5f-8992-494b-b4f1-e7279a9cfe0c",
+                            TwoFactorEnabled = false,
+                            UserName = "Admin",
+                            age = 34,
+                            gender = "ذكر",
+                            mobileNumber = "01097675878"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -147,6 +168,36 @@ namespace Intsar_F_Project.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "fab4fac1-c546-41de-aebc-a14da6895711",
+                            ConcurrencyStamp = "1",
+                            Name = "Admin",
+                            NormalizedName = "Admin"
+                        },
+                        new
+                        {
+                            Id = "c7b013f0-5201-4317-abd8-c211f91b7330",
+                            ConcurrencyStamp = "2",
+                            Name = "Judge",
+                            NormalizedName = "Judge"
+                        },
+                        new
+                        {
+                            Id = "c7b013f0-5201-4317-abd8-c211f91b7990",
+                            ConcurrencyStamp = "3",
+                            Name = "Comp",
+                            NormalizedName = "Comp"
+                        },
+                        new
+                        {
+                            Id = "c7b013f0-5201-4317-abd8-c211f91b7590",
+                            ConcurrencyStamp = "3",
+                            Name = "User",
+                            NormalizedName = "User"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -232,6 +283,13 @@ namespace Intsar_F_Project.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "b74ddd14-6340-4840-95c2-db12554843e5",
+                            RoleId = "fab4fac1-c546-41de-aebc-a14da6895711"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

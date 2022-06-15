@@ -26,8 +26,7 @@ namespace Intsar_F_Project.Models
         public string NationalId { get; set; }
         [Required(ErrorMessage = "تأكد من ادخال عمرك")]
         public int Age { get; set; }
-        [Required(ErrorMessage = "تأكد من ادخال رقم المشروع")]
-        public int ProjectNum { get; set; }
+        
         [Required(ErrorMessage = "تأكد من ادخال عدد المشاركين في المشروع")]
         public int CompNum { get; set; }
         [Required(ErrorMessage = "تأكد من اختيار النوع")]

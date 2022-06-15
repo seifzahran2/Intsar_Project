@@ -23,7 +23,7 @@ namespace Intsar_F_Project.Controllers
         }
         public IActionResult AdminHome(string id)
         {
-
+            
             var contacts = _App.contacts.ToList();
             int Comps = 0;
             int Judges = 0;
@@ -81,17 +81,21 @@ namespace Intsar_F_Project.Controllers
             var Message = _App.contacts.Where(d => d.Id == id).FirstOrDefault();
             return View(Message);
         }
-        public async Task<IActionResult> UserMangment()
+        public  IActionResult UserMangment()
         {
-            var user = await _userManager.Users.Select(user => new UserVM
+            var users =  _userManager.Users.Select(user => new UserVM
             {
                 Id = user.Id,
                 Name = user.Name,
                 Specialization = user.Specialization,
                 Email = user.Email,
-                Roles = _userManager.GetRolesAsync(user).Result
-            }).ToListAsync();
-            return View(user);
+                user=user
+            }).ToList();
+            foreach (var user in users)
+            {
+                user.Roles = _userManager.GetRolesAsync(user.user).Result;
+            }
+            return View(users);
         }
         public IActionResult JopSelction(string id)
         {
@@ -131,7 +135,7 @@ namespace Intsar_F_Project.Controllers
 
         public IActionResult ResultHome()
         {
-            var user = _App.compRegs.ToList();
+            var user = _App.compRegs.Where(u=> u.IsAccepted==true).ToList();
             return View(user);
         }
 
@@ -151,6 +155,22 @@ namespace Intsar_F_Project.Controllers
         {
             return View();
         }
-        
+
+        public IActionResult UserInfo(string id)
+        {
+            var userVM = _userManager.Users.Select(user => new UserVM
+            {
+                Name = user.Name,
+                Email = user.Email,
+                NationalID = user.NationalID,
+                mobileNumber = user.mobileNumber,
+                age = user.age,
+                Specialization = user.Specialization,
+                user = user,
+                gender = user.gender,
+            }).FirstOrDefault();
+            userVM.Roles = _userManager.GetRolesAsync(userVM.user).Result;
+            return View(userVM);
+        }
     }
 }

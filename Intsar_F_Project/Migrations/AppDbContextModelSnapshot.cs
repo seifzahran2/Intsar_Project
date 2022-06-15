@@ -15,7 +15,7 @@ namespace Intsar_F_Project.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.16")
+                .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Intsar_F_Project.Models.CompReg", b =>
@@ -71,9 +71,6 @@ namespace Intsar_F_Project.Migrations
                         .IsRequired()
                         .HasMaxLength(14)
                         .HasColumnType("nvarchar(14)");
-
-                    b.Property<int>("ProjectNum")
-                        .HasColumnType("int");
 
                     b.Property<string>("educational_system")
                         .IsRequired()

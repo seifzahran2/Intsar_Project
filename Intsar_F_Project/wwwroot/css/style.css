@@ -158,10 +158,6 @@ margin-left: 2.5rem;
 display: none !important;
 }
 
-.navbar-toggler
-{
-margin-left: 50% !important;
-}
 }
 
 /* nav user */
@@ -185,10 +181,7 @@ margin-left: 50% !important;
   border-radius: 100px;
 }
 
-.navbar-toggler-user
-{
-  margin-left: 60% !important;
-}
+
 
 @media only screen and (max-width:992px){
   .nav-profile

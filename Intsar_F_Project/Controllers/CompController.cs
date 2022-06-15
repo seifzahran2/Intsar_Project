@@ -37,7 +37,6 @@ namespace Intsar_F_Project.Controllers
                 DriveLink = projectVM.DriveLink,
                 Specialization = compSp.project_type,
                 Email = compSp.Email
-               
             };
             compSp.IsprojecSent=true;
             _App.Add(project);

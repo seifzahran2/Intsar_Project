@@ -179,7 +179,6 @@ E:\projects\Intsar_F_Project\Intsar_F_Project\obj\Debug\net5.0\Razor\Views\Home\
 E:\projects\Intsar_F_Project\Intsar_F_Project\obj\Debug\net5.0\Razor\Views\Admin\AdminHome.cshtml.g.cs
 E:\projects\Intsar_F_Project\Intsar_F_Project\obj\Debug\net5.0\Razor\Views\Admin\CompRequest.cshtml.g.cs
 E:\Repos\Intsar_Project\Intsar_F_Project\bin\Debug\net5.0\appsettings.Development.json
-E:\Repos\Intsar_Project\Intsar_F_Project\bin\Debug\net5.0\appsettings.json
 E:\Repos\Intsar_Project\Intsar_F_Project\bin\Debug\net5.0\Intsar_F_Project.StaticWebAssets.xml
 E:\Repos\Intsar_Project\Intsar_F_Project\bin\Debug\net5.0\Intsar_F_Project.exe
 E:\Repos\Intsar_Project\Intsar_F_Project\bin\Debug\net5.0\Intsar_F_Project.deps.json
@@ -370,3 +369,5 @@ E:\Repos\Intsar_Project\Intsar_F_Project\obj\Debug\net5.0\Razor\Views\Admin\comp
 E:\Repos\Intsar_Project\Intsar_F_Project\obj\Debug\net5.0\Razor\Views\Admin\errorView.cshtml.g.cs
 E:\Repos\Intsar_Project\Intsar_F_Project\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\ConfirmEmail.cshtml.g.cs
 E:\Repos\Intsar_Project\Intsar_F_Project\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\RegisterConfirmation.cshtml.g.cs
+E:\Repos\Intsar_Project\Intsar_F_Project\obj\Debug\net5.0\Razor\Views\Admin\UserInfo.cshtml.g.cs
+E:\Repos\Intsar_Project\Intsar_F_Project\bin\Debug\net5.0\appsettings.json

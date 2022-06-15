@@ -1,7 +1,6 @@
 E:\Repos\Intsar_Project\Intsar_F_Project\obj\Release\net5.0\win-x64\PubTmp\Out\Intsar_F_Project.exe
 E:\Repos\Intsar_Project\Intsar_F_Project\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\css\style.css
 E:\Repos\Intsar_Project\Intsar_F_Project\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\css\styleA.css
-E:\Repos\Intsar_Project\Intsar_F_Project\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\css\styleB.css
 E:\Repos\Intsar_Project\Intsar_F_Project\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\image\about-cello.jpg
 E:\Repos\Intsar_Project\Intsar_F_Project\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\image\about-Draw.jfif
 E:\Repos\Intsar_Project\Intsar_F_Project\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\image\about-Poetry.jpg

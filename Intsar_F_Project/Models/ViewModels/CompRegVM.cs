@@ -8,7 +8,6 @@
         public string BankAccount { get; set; }
         public string NationalId { get; set; }
         public int Age { get; set; }
-        public int ProjectNum { get; set; }
         public int CompNum { get; set; }
         public string Gender { get; set; }
         public string project_type { get; set; }

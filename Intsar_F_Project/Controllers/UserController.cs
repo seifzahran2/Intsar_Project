@@ -37,7 +37,6 @@ namespace Intsar_F_Project.Controllers
                 BankAccount = compRegVM.BankAccount,
                 NationalId = compRegVM.NationalId,
                 Age = compRegVM.Age,
-                ProjectNum = compRegVM.ProjectNum,
                 CompNum = compRegVM.CompNum,
                 Gender = compRegVM.Gender,
                 project_type = compRegVM.project_type,

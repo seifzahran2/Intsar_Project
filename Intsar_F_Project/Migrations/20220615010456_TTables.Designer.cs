@@ -9,15 +9,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Intsar_F_Project.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220512094635_IsprojecSent")]
-    partial class IsprojecSent
+    [Migration("20220615010456_TTables")]
+    partial class TTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.16")
+                .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Intsar_F_Project.Models.CompReg", b =>
@@ -74,9 +74,6 @@ namespace Intsar_F_Project.Migrations
                         .HasMaxLength(14)
                         .HasColumnType("nvarchar(14)");
 
-                    b.Property<int>("ProjectNum")
-                        .HasColumnType("int");
-
                     b.Property<string>("educational_system")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -117,6 +114,70 @@ namespace Intsar_F_Project.Migrations
                     b.ToTable("contacts");
                 });
 
+            modelBuilder.Entity("Intsar_F_Project.Models.DegComp", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ContentQuality")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExecutionQuality")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gui")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("InfrastructureUsed")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MasteringTheTools")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OverallRating")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProjectBbenefit")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProjectIdea")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("compRegId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("complexity")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("language_Tools")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("compRegId")
+                        .IsUnique();
+
+                    b.ToTable("degComps");
+                });
+
             modelBuilder.Entity("Intsar_F_Project.Models._Project", b =>
                 {
                     b.Property<int>("Id")
@@ -142,6 +203,22 @@ namespace Intsar_F_Project.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("projects");
+                });
+
+            modelBuilder.Entity("Intsar_F_Project.Models.DegComp", b =>
+                {
+                    b.HasOne("Intsar_F_Project.Models.CompReg", "compReg")
+                        .WithOne("degComp")
+                        .HasForeignKey("Intsar_F_Project.Models.DegComp", "compRegId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("compReg");
+                });
+
+            modelBuilder.Entity("Intsar_F_Project.Models.CompReg", b =>
+                {
+                    b.Navigation("degComp");
                 });
 #pragma warning restore 612, 618
         }

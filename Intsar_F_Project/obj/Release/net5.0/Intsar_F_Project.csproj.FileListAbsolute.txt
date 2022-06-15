@@ -190,3 +190,4 @@ E:\Repos\Intsar_Project\Intsar_F_Project\obj\Release\net5.0\Intsar_F_Project.dll
 E:\Repos\Intsar_Project\Intsar_F_Project\obj\Release\net5.0\ref\Intsar_F_Project.dll
 E:\Repos\Intsar_Project\Intsar_F_Project\obj\Release\net5.0\Intsar_F_Project.pdb
 E:\Repos\Intsar_Project\Intsar_F_Project\obj\Release\net5.0\Intsar_F_Project.genruntimeconfig.cache
+E:\Repos\Intsar_Project\Intsar_F_Project\obj\Release\net5.0\Razor\Views\Admin\UserInfo.cshtml.g.cs
